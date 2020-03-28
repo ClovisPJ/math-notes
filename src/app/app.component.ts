@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Definition} from './math/math-model/document';
+import {Document, Definition, Section, Subsection} from './math/math-model/document';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,11 @@ export class AppComponent {
     new Definition('Heya therre', '\LaTeX'),
     new Definition('Heya therre', '\LaTeX'),
   ];
+
+  document = new Document(
+    [new Section('section 1',
+      [new Subsection('subsection 1', this.defintions, [])])]
+  );
 
   enumerate(definitions: Definition[]): object[] {
     return definitions.map((definition: Definition, index: number) => {
