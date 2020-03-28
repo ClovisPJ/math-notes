@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Lemma } from '../../math-model/document';
 
 @Component({
   selector: 'app-lemma',
@@ -8,8 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class LemmaComponent {
 
   @Input() number: number;
-  @Input() description: string;
-  @Input() latex: string;
+  @Input() lemma: Lemma;
 
   constructor() {
   }

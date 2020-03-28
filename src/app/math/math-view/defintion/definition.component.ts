@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Definition } from '../../math-model/document';
 
 @Component({
   selector: 'app-defintion',
@@ -8,8 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class DefinitionComponent {
 
   @Input() number: number;
-  @Input() description: string;
-  @Input() latex: string;
+  @Input() definition: Definition;
 
   constructor() {
   }

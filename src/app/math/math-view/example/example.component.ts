@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Example } from '../../math-model/document';
 
 @Component({
   selector: 'app-example',
@@ -8,8 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ExampleComponent {
 
   @Input() number: number;
-  @Input() description: string;
-  @Input() latex: string;
+  @Input() example: Example;
 
   constructor() {
   }

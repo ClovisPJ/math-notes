@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Proof } from '../../math-model/document';
 
 @Component({
   selector: 'app-proof',
@@ -8,8 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ProofComponent {
 
   @Input() number: number;
-  @Input() description: string;
-  @Input() latex: string;
+  @Input() proof: Proof;
 
   constructor() {
   }
