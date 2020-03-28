@@ -11,6 +11,9 @@ import { ExampleComponent } from './math/math-view/example/example.component';
 import { LemmaComponent } from './math/math-view/lemma/lemma.component';
 import { ProofComponent } from './math/math-view/proof/proof.component';
 import { PropositionComponent } from './math/math-view/proposition/proposition.component';
+import { SubsectionComponent } from './math/math-view/subsection/subsection.component';
+import { SectionComponent } from './math/math-view/section/section.component';
+import { DocumentComponent } from './math/math-view/document/document.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { PropositionComponent } from './math/math-view/proposition/proposition.c
     ExampleComponent,
     LemmaComponent,
     ProofComponent,
-    PropositionComponent
+    PropositionComponent,
+    SubsectionComponent,
+    SectionComponent,
+    DocumentComponent
   ],
   imports: [
     BrowserModule,
