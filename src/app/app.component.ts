@@ -18,7 +18,7 @@ export class AppComponent {
   enumerate(definitions: Definition[]): object[] {
     return definitions.map((definition: Definition, index: number) => {
     return {
-      number: '1.' + index,
+      number: '2.' + index,
       description: definition.description,
       latex: definition.latex,
     };

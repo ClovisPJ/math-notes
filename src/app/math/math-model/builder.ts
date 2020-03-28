@@ -66,7 +66,7 @@ export class PropositionBuilder {
   // tslint:disable-next-line:variable-name
   private _lemmas: Lemma[] = [];
   // tslint:disable-next-line:variable-name
-  private _proofs: Proof[] = [];
+  private _proof: Proof;
   // tslint:disable-next-line:variable-name
   private _corollaries: Corollary[] = [];
   // tslint:disable-next-line:variable-name
@@ -85,7 +85,7 @@ export class PropositionBuilder {
   }
 
   with_proof(proof: Proof) {
-    this._proofs.push(proof);
+    this._proof = proof;
   }
 
   with_corollary(corollary: Corollary) {
@@ -97,7 +97,7 @@ export class PropositionBuilder {
   }
 
   build(): Proposition {
-    return new Proposition(this._description, this._latex, this._lemmas, this._proofs, this._corollaries, this._examples);
+    return new Proposition(this._description, this._latex, this._lemmas, this._proof, this._corollaries, this._examples);
   }
 
 }

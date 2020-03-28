@@ -1,4 +1,39 @@
-import { Descriptable, Latexable } from 'base';
+export abstract class Descriptable {
+
+  protected constructor(description: string) {
+    this._description = description;
+  }
+
+  // tslint:disable-next-line:variable-name
+  private _description: string;
+
+  public get description(): string {
+    return this._description;
+  }
+  public set description(description: string) {
+    this._description = description;
+  }
+
+}
+
+export abstract class Latexable extends Descriptable {
+
+  protected constructor(description: string, latex: string) {
+    super(description);
+    this._latex = latex;
+  }
+
+  // tslint:disable-next-line:variable-name
+  private _latex: string;
+
+  public get latex(): string {
+    return this._latex;
+  }
+  public set latex(latex: string) {
+    this._latex = latex;
+  }
+
+}
 
 export class Document {
 
