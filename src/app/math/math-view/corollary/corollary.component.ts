@@ -1,20 +1,17 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-math-definition',
-  templateUrl: './math.component.html',
-  styleUrls: ['./math.component.css']
+  selector: 'app-corollary',
+  templateUrl: './corollary.component.html',
+  styleUrls: ['./corollary.component.css']
 })
-export class MathComponent implements OnInit {
+export class CorollaryComponent {
 
   @Input() number: number;
   @Input() description: string;
   @Input() latex: string;
 
   constructor() {
-  }
-
-  ngOnInit() {
   }
 
 }

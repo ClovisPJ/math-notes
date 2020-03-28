@@ -5,12 +5,20 @@ import { KatexModule } from 'ng-katex';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MathComponent } from './math/math-view/math.component';
+import { DefinitionComponent } from './math/math-view/defintion/definition.component';
+import { CorollaryComponent } from './math/math-view/corollary/corollary.component';
+import { ExampleComponent } from './math/math-view/example/example.component';
+import { LemmaComponent } from './math/math-view/lemma/lemma.component';
+import { ProofComponent } from './math/math-view/proof/proof.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MathComponent
+    DefinitionComponent,
+    CorollaryComponent,
+    ExampleComponent,
+    LemmaComponent,
+    ProofComponent
   ],
   imports: [
     BrowserModule,
