@@ -10,6 +10,7 @@ import { CorollaryComponent } from './math/math-view/corollary/corollary.compone
 import { ExampleComponent } from './math/math-view/example/example.component';
 import { LemmaComponent } from './math/math-view/lemma/lemma.component';
 import { ProofComponent } from './math/math-view/proof/proof.component';
+import { PropositionComponent } from './math/math-view/proposition/proposition.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProofComponent } from './math/math-view/proof/proof.component';
     CorollaryComponent,
     ExampleComponent,
     LemmaComponent,
-    ProofComponent
+    ProofComponent,
+    PropositionComponent
   ],
   imports: [
     BrowserModule,
