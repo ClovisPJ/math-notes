@@ -108,11 +108,11 @@ export class Subsection extends Descriptable {
   // tslint:disable-next-line:variable-name
   private _propositions: Proposition[];
 
-  get defintions(): Definition[] {
+  get definitions(): Definition[] {
     return this._definitions;
   }
 
-  set defintions(value: Definition[]) {
+  set definitions(value: Definition[]) {
     this._definitions = value;
   }
 
