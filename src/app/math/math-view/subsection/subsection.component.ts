@@ -11,7 +11,13 @@ export class SubsectionComponent {
   @Input() number: number;
   @Input() subsection: Subsection;
 
+  private hideBody: boolean;
+
   constructor() {
+  }
+
+  switchHideBody() {
+    this.hideBody = !this.hideBody;
   }
 
 }

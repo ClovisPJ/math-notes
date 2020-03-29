@@ -1,7 +1,13 @@
-<h2 id="description">
+<h2
+  id="description"
+  [style.background]="mouseInteraction | descriptionColorPipe"
+  (mouseenter)="mouseInteract('hover')"
+  (mouseleave)="mouseInteract('none')"
+  (click)="click()"
+>
   <span>{{ number }}</span> Section: <span>{{ section.description }}</span>
 </h2>
 
-<div id="body">
+<div id="body" *ngIf="mouseInteraction !== 'click'">
   <app-subsection *ngFor="let subsection of section.subsections" [subsection]="subsection"></app-subsection>
 </div>

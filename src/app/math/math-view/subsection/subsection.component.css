@@ -7,3 +7,15 @@
 #body {
   margin: 2% 4% 2% 4%;
 }
+
+h3, p {
+  display: inline-block;
+}
+
+#hideBody {
+  float: right;
+}
+
+#hideBody:hover {
+  text-decoration: underline;
+}

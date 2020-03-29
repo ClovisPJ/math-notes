@@ -1,9 +1,13 @@
+<div id="description">
+  <h3>
+    {{ number }} Subsection: {{ subsection.description }}
+  </h3>
+  <p id="hideBody" (click)="switchHideBody()">
+    [{{hideBody ? 'show' : 'hide'}}]
+  </p>
+</div>
 
-<h3 id="description">
-  <span>{{ number }}</span> Subsection: <span>{{ subsection.description }}</span>
-</h3>
-
-<div id="body">
+<div id="body" *ngIf="!hideBody">
   <app-defintion *ngFor="let definition of subsection.definitions" [definition]="definition"></app-defintion>
   <app-proposition *ngFor="let proposition of subsection.propositions" [proposition]="proposition"></app-proposition>
 </div>
