@@ -1,7 +1,10 @@
-<h3>
+
+<h3 id="description">
   <span>{{ number }}</span> Subsection: <span>{{ subsection.description }}</span>
 </h3>
 
-<app-defintion *ngFor="let definition of subsection.defintions" [definition]="definition"></app-defintion>
-<app-proposition *ngFor="let proposition of subsection.propositions" [proposition]="proposition"></app-proposition>
+<div id="body">
+  <app-defintion *ngFor="let definition of subsection.defintions" [definition]="definition"></app-defintion>
+  <app-proposition *ngFor="let proposition of subsection.propositions" [proposition]="proposition"></app-proposition>
+</div>
 

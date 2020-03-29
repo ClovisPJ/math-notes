@@ -1,0 +1,17 @@
+#document {
+  display: inline-block;
+  width: 60%;
+  padding: 0;
+  margin-left: 20%;
+  margin-right: 20%;
+  background: #eeeeee;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #c0c0c0;
+}
+
+#description {
+  text-align: center;
+  font-size: 200%;
+  margin: 2%;
+}

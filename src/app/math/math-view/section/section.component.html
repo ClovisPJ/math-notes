@@ -1,5 +1,7 @@
-<h3>
+<h2 id="description">
   <span>{{ number }}</span> Section: <span>{{ section.description }}</span>
-</h3>
+</h2>
 
-<app-subsection *ngFor="let subsection of section.subsections" [subsection]="subsection"></app-subsection>
+<div id="body">
+  <app-subsection *ngFor="let subsection of section.subsections" [subsection]="subsection"></app-subsection>
+</div>
