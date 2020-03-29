@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Document, Definition, Section, Subsection} from './math/math-model/document';
+import { Document, Definition } from './math/math-model/document';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +33,15 @@ const doc = {
           { description: 'heyab there', latex: '\LaTeX' },
           { description: 'heyac there', latex: '\LaTeX' }
         ],
-        propositions: []
+        propositions: [
+          {
+            description: 'prop 1', latex: '\LaTeX',
+            lemmas: [],
+            proof: { description: 'trivial', latex: 'QED' },
+            corollaries: [],
+            examples: []
+          }
+        ]
       }
     ]
   }]
