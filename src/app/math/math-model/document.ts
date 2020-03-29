@@ -61,8 +61,8 @@ export class Document {
     this._sections = value;
   }
 
-  public static parse({ sections }: { sections: array }): Document {
-    return new Document(sections.map(Subsection.parse));
+  public static parse({ sections }: { sections: object[] }): Document {
+    return new Document(sections.map(Section.parse));
   }
 
 }
@@ -86,7 +86,7 @@ export class Section extends Descriptable {
   }
 
   public static parse({ description, subsections }:
-                        { description: string, subsections: array }
+                        { description: string, subsections: object[] }
                         ): Section {
     return new Section(
       description, subsections.map(Subsection.parse)
@@ -125,7 +125,7 @@ export class Subsection extends Descriptable {
   }
 
   public static parse({ description, definitions, propositions }:
-                        { description: string, definitions: array, propositions: array }
+                        { description: string, definitions: object[], propositions: object[] }
                         ): Subsection {
     return new Subsection(
       description, definitions.map(Definition.parse), propositions.map(Proposition.parse),
@@ -198,7 +198,7 @@ export class Proposition extends Latexable {
   }
 
   public static parse({ description, latex, lemmas, proof, corollaries, examples }:
-                        { description: string, latex: string, lemmas: array, proof, corollaries: array, examples: array }
+                        { description: string, latex: string, lemmas: object[], proof: object, corollaries: object[], examples: object[] }
                         ): Proposition {
     return new Proposition(
       description, latex,

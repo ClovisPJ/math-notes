@@ -8,17 +8,7 @@ import {Document, Definition, Section, Subsection} from './math/math-model/docum
 })
 export class AppComponent {
   title = 'math-notes';
-
-  defintions = [
-    new Definition('Heya therre', '\LaTeX'),
-    new Definition('Heya therre', '\LaTeX'),
-    new Definition('Heya therre', '\LaTeX'),
-  ];
-
-  document = new Document(
-    [new Section('section 1',
-      [new Subsection('subsection 1', this.defintions, [])])]
-  );
+  document = Document.parse(doc);
 
   enumerate(definitions: Definition[]): object[] {
     return definitions.map((definition: Definition, index: number) => {
@@ -31,3 +21,20 @@ export class AppComponent {
   }
 
 }
+
+const doc = {
+  sections: [{
+    description: 'section 1',
+    subsections: [
+      {
+        description: 'subsection 1',
+        definitions: [
+          { description: 'heyaa there', latex: '\LaTeX' },
+          { description: 'heyab there', latex: '\LaTeX' },
+          { description: 'heyac there', latex: '\LaTeX' }
+        ],
+        propositions: []
+      }
+    ]
+  }]
+};
