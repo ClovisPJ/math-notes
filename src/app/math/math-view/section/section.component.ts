@@ -37,10 +37,10 @@ export class SectionComponent {
   }
 
   get descriptionColor() {
-    if (this.click) {
-      return '#e9eef3';
-    } else if (this.hover) {
+    if (this.hover) {
       return '#eff4f9';
+    } else if (this.click) {
+      return '#e9eef3';
     } else {
       return '#f5faff';
     }

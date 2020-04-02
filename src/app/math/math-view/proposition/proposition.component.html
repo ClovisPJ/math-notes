@@ -1,14 +1,30 @@
 <div id="proposition">
+  <table>
+    <tr>
+      <td rowspan="2"
+          id="hideClicker"
+          [style.background]="hideClickerColor"
+          (mouseenter)="hover = true"
+          (mouseleave)="hover = false"
+          (click)="click = !click"
+      >
+        <!--span id="hideClicker"></span-->
+      </td>
+      <td>
+        {{ number }} Proposition {{ proposition.description }}
+      </td>
+    </tr>
+    <tr>
+      <td *ngIf="!click">
 
-  <h3>
-    <span>{{ number }}</span> Proposition: <span>{{ proposition.description }}</span>
-  </h3>
+        <ng-katex [equation]="proposition.latex"></ng-katex>
 
-  <ng-katex [equation]="proposition.latex"></ng-katex>
+        <app-lemma *ngFor="let lemma of proposition.lemmas" [lemma]="lemma"></app-lemma>
+        <app-proof [proof]="proposition.proof"></app-proof>
+        <app-corollary *ngFor="let corollary of proposition.corollaries" [corollary]="corollary"></app-corollary>
+        <app-example *ngFor="let example of proposition.examples" [example]="example"></app-example>
 
-  <app-lemma *ngFor="let lemma of proposition.lemmas" [lemma]="lemma"></app-lemma>
-  <app-proof [proof]="proposition.proof"></app-proof>
-  <app-corollary *ngFor="let corollary of proposition.corollaries" [corollary]="corollary"></app-corollary>
-  <app-example *ngFor="let example of proposition.examples" [example]="example"></app-example>
-
+      </td>
+    </tr>
+  </table>
 </div>

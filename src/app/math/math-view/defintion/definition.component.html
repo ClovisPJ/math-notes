@@ -1,6 +1,23 @@
 <div id="definition">
-  <h3>
-    <span>{{ number }}</span> Defintion of <span>{{ definition.description }}</span>
-  </h3>
-  <ng-katex [equation]="definition.latex"></ng-katex>
+  <table>
+    <tr>
+      <td rowspan="2"
+          id="hideClicker"
+          [style.background]="hideClickerColor"
+          (mouseenter)="hover = true"
+          (mouseleave)="hover = false"
+          (click)="click = !click"
+      >
+        <!--span id="hideClicker"></span-->
+      </td>
+      <td>
+        {{ number }} Defintion of {{ definition.description }}
+      </td>
+    </tr>
+    <tr>
+      <td *ngIf="!click">
+        <ng-katex [equation]="definition.latex"></ng-katex>
+      </td>
+    </tr>
+  </table>
 </div>
