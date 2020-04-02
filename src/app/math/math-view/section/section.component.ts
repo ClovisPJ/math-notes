@@ -38,11 +38,11 @@ export class SectionComponent {
 
   get descriptionColor() {
     if (this.click) {
-      return '#a2a2a2';
+      return '#e9eef3';
     } else if (this.hover) {
-      return '#cdcdcd';
+      return '#eff4f9';
     } else {
-      return '#e2e2e2';
+      return '#f5faff';
     }
   }
 

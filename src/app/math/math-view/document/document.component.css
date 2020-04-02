@@ -2,12 +2,14 @@
   display: inline-block;
   width: 60%;
   padding: 0;
+  margin-top: 1%;
   margin-left: 20%;
   margin-right: 20%;
-  background: #eeeeee;
+  background: #ffffff;
   border-style: solid;
-  border-radius: 5px;
-  border-color: #c0c0c0;
+  border-radius: 0;
+  border-width: 1px;
+  border-color: #a7d7f9;
 }
 
 #description {
