@@ -1,6 +1,5 @@
-import {Component, Input, Pipe, PipeTransform} from '@angular/core';
+import {Component, Input } from '@angular/core';
 import { Section } from '../../math-model/document';
-import {switchMapTo} from 'rxjs/operators';
 
 @Component({
   selector: 'app-section',
@@ -12,33 +11,39 @@ export class SectionComponent {
   @Input() number: number;
   @Input() section: Section;
 
-  private mouseInteraction: string;
+  // tslint:disable-next-line:variable-name
+  private _hover: boolean;
+  // tslint:disable-next-line:variable-name
+  private _click: boolean;
 
   constructor() {
-    this.mouseInteraction = 'none';
+    this._hover = false;
+    this._click = false;
   }
 
-  click() {
-    this.mouseInteraction = (this.mouseInteraction !== 'click') ? 'click' : 'none';
+  get click(): boolean {
+    return this._click;
   }
 
-  mouseInteract(state: string) {
-    this.mouseInteraction = state;
+  set click(value: boolean) {
+    this._click = value;
+  }
+  get hover(): boolean {
+    return this._hover;
   }
 
-}
+  set hover(value: boolean) {
+    this._hover = value;
+  }
 
-@Pipe({name: 'descriptionColorPipe'})
-export class DescriptionColorPipe implements PipeTransform {
-  transform(mouseInteraction: string): string {
-    switch (mouseInteraction) {
-      case 'click':
-        return '#a2a2a2';
-      case 'hover':
-        return '#cdcdcd';
-      case 'none':
-      default:
-        return '#e2e2e2';
+  get descriptionColor() {
+    if (this.click) {
+      return '#a2a2a2';
+    } else if (this.hover) {
+      return '#cdcdcd';
+    } else {
+      return '#e2e2e2';
     }
   }
+
 }
