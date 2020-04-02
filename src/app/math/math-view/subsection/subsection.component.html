@@ -1,14 +1,40 @@
-<div id="description">
-  <h3>
-    {{ number }} Subsection: {{ subsection.description }}
-  </h3>
-  <p id="hideBody" (click)="switchHideBody()">
-    [{{hideBody ? 'show' : 'hide'}}]
-  </p>
-</div>
+<div id="subsection">
 
-<div id="body" *ngIf="!hideBody">
-  <app-defintion *ngFor="let definition of subsection.definitions" [definition]="definition"></app-defintion>
-  <app-proposition *ngFor="let proposition of subsection.propositions" [proposition]="proposition"></app-proposition>
-</div>
+  <div id="description" [style.border-bottom]="hideBody ? '' : '2px solid #000000'">
+    <div>
+      <h3>
+        {{ number }} Subsection: {{ subsection.description }}
+      </h3>
+      <p id="bodyHideClicker" (click)="hideBody = !hideBody">
+        [{{hideBody ? 'show' : 'hide'}}]
+      </p>
+    </div>
+    <div *ngIf="!hideBody">
+      &nbsp;
+      &nbsp;
+      <p id="definitionsHideClicker"
+         (click)="hideDefinitions = !hideDefinitions"
+         [style.font-weight]="hideDefinitions ? '' : 'bold'"
+      >
+        [definitions]
+      </p>
+      &nbsp;
+      <span id="propositionsHideClicker"
+            [style.font-weight]="hidePropositions? '' : 'bold'"
+            (click)="hidePropositions = !hidePropositions"
+      >
+        [propositions]
+      </span>
+    </div>
+  </div>
 
+  <div id="body" *ngIf="!hideBody">
+    <ng-container *ngIf="!hideDefinitions">
+      <app-defintion *ngFor="let definition of subsection.definitions" [definition]="definition"></app-defintion>
+    </ng-container>
+    <ng-container *ngIf="!hidePropositions">
+      <app-proposition *ngFor="let proposition of subsection.propositions" [proposition]="proposition"></app-proposition>
+    </ng-container>
+  </div>
+
+</div>

@@ -7,17 +7,45 @@ import { Subsection } from '../../math-model/document';
   styleUrls: ['./subsection.component.css']
 })
 export class SubsectionComponent {
-
   @Input() number: number;
   @Input() subsection: Subsection;
 
-  private hideBody: boolean;
+  // tslint:disable-next-line:variable-name
+  private _hideBody: boolean;
+  // tslint:disable-next-line:variable-name
+  private _hideDefinitions: boolean;
+  // tslint:disable-next-line:variable-name
+  private _hidePropositions: boolean;
 
   constructor() {
+    this._hideBody = false;
+    this._hideDefinitions = false;
+    this._hidePropositions = false;
   }
 
-  switchHideBody() {
-    this.hideBody = !this.hideBody;
+  get hideBody(): boolean {
+    return this._hideBody;
   }
+
+  set hideBody(value: boolean) {
+    this._hideBody = value;
+  }
+
+  get hideDefinitions(): boolean {
+    return this._hideDefinitions;
+  }
+
+  set hideDefinitions(value: boolean) {
+    this._hideDefinitions = value;
+  }
+
+  get hidePropositions(): boolean {
+    return this._hidePropositions;
+  }
+
+  set hidePropositions(value: boolean) {
+    this._hidePropositions = value;
+  }
+
 
 }
