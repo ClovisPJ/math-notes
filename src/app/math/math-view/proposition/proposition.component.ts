@@ -10,6 +10,7 @@ export class PropositionComponent {
 
   @Input() number: number;
   @Input() proposition: Proposition;
+  @Input() lockEdit: boolean;
 
   // tslint:disable-next-line:variable-name
   private _hover: boolean;

@@ -46,6 +46,7 @@
       <app-proposition *ngFor="let proposition of subsection.propositions"
                        [proposition]="proposition"
                        [number]="subsection.propositions.indexOf(proposition) + 1"
+                       [lockEdit]="lockEdit"
       ></app-proposition>
     </ng-container>
   </div>

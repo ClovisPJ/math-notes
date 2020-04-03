@@ -20,7 +20,7 @@
         <ng-katex [equation]="proposition.latex"></ng-katex>
 
         <app-lemma *ngFor="let lemma of proposition.lemmas" [lemma]="lemma"></app-lemma>
-        <app-proof [proof]="proposition.proof"></app-proof>
+        <app-proof [proof]="proposition.proof" [lockEdit]="lockEdit"></app-proof>
         <app-corollary *ngFor="let corollary of proposition.corollaries" [corollary]="corollary"></app-corollary>
         <app-example *ngFor="let example of proposition.examples" [example]="example"></app-example>
 
