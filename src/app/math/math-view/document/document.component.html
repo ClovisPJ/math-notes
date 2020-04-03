@@ -1,4 +1,12 @@
 <div id="document">
+
   <h1 id="description">Document</h1>
+
   <app-section *ngFor="let section of document.sections" [section]="section"></app-section>
+  <app-section
+    [section]="newSectionBanner"
+    [isNewSection]="true"
+    (descriptionClick)="createNewSection()"
+  ></app-section>
+
 </div>

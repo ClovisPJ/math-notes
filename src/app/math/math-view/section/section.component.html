@@ -3,11 +3,18 @@
   [style.background]="descriptionColor"
   (mouseenter)="hover = true"
   (mouseleave)="hover = false"
-  (click)="click = !click"
+  (click)="descriptionClick()"
 >
-  <span>{{ number }}</span> Section: <span>{{ section.description }}</span>
+  {{ number }}
+  {{ section.description }}
 </h2>
 
 <div id="body" *ngIf="!click">
   <app-subsection *ngFor="let subsection of section.subsections" [subsection]="subsection"></app-subsection>
+  <app-subsection
+    *ngIf="!isNewSection"
+    [subsection]="newSubsectionBanner"
+    [isNewSubsection]="true"
+    (descriptionClick)="createNewSubsection()"
+  ></app-subsection>
 </div>

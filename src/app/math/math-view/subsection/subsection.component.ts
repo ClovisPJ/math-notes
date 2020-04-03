@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { Subsection } from '../../math-model/document';
 
 @Component({
@@ -7,8 +7,13 @@ import { Subsection } from '../../math-model/document';
   styleUrls: ['./subsection.component.css']
 })
 export class SubsectionComponent {
+
   @Input() number: number;
   @Input() subsection: Subsection;
+  @Input() isNewSubsection: boolean;
+
+  // tslint:disable-next-line:variable-name
+  @Output('descriptionClick') _descriptionClick = new EventEmitter<boolean>();
 
   // tslint:disable-next-line:variable-name
   private _hideBody: boolean;
@@ -24,7 +29,7 @@ export class SubsectionComponent {
   }
 
   get hideBody(): boolean {
-    return this._hideBody;
+    return this._hideBody || this.isNewSubsection;
   }
 
   set hideBody(value: boolean) {
@@ -47,5 +52,8 @@ export class SubsectionComponent {
     this._hidePropositions = value;
   }
 
+  descriptionClick() {
+    this._descriptionClick.emit(true);
+  }
 
 }

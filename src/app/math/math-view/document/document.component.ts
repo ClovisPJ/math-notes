@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Document } from '../../math-model/document';
+import {Document, Section} from '../../math-model/document';
 
 @Component({
   selector: 'app-document',
@@ -9,8 +9,13 @@ import { Document } from '../../math-model/document';
 export class DocumentComponent {
 
   @Input() document: Document;
+  newSectionBanner: Section = new Section('+', []);
 
   constructor() {
+  }
+
+  createNewSection() {
+    this.document.sections.push(new Section('New Section', []));
   }
 
 }

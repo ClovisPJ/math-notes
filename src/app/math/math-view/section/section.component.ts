@@ -1,5 +1,5 @@
-import {Component, Input } from '@angular/core';
-import { Section } from '../../math-model/document';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Section, Subsection} from '../../math-model/document';
 
 @Component({
   selector: 'app-section',
@@ -10,11 +10,16 @@ export class SectionComponent {
 
   @Input() number: number;
   @Input() section: Section;
+  @Input() isNewSection: boolean;
+
+  // tslint:disable-next-line:variable-name
+  @Output('descriptionClick') _descriptionClick = new EventEmitter<boolean>();
 
   // tslint:disable-next-line:variable-name
   private _hover: boolean;
   // tslint:disable-next-line:variable-name
   private _click: boolean;
+  newSubsectionBanner: Subsection = new Subsection('+', [], []);
 
   constructor() {
     this._hover = false;
@@ -26,6 +31,9 @@ export class SectionComponent {
   }
 
   set click(value: boolean) {
+    if (this.isNewSection) {
+      return;
+    }
     this._click = value;
   }
   get hover(): boolean {
@@ -44,6 +52,18 @@ export class SectionComponent {
     } else {
       return '#f5faff';
     }
+  }
+
+  descriptionClick() {
+    this._descriptionClick.emit(true);
+    if (this.isNewSection) {
+      return;
+    }
+    this.click = !this.click;
+  }
+
+  createNewSubsection() {
+    this.section.subsections.push(new Subsection('New Subsection', [], []));
   }
 
 }

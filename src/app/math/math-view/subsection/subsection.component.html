@@ -1,11 +1,15 @@
 <div id="subsection">
 
-  <div id="description" [style.border-bottom]="hideBody ? '' : '2px solid #000000'">
-    <div>
+  <div id="description"
+       [style.border-bottom]="hideBody ? '' : '2px solid #000000'"
+       [style.margin]="isNewSubsection ? '0 2% 0 2%' : '1% 2% 1% 2%'"
+       (click)="descriptionClick()"
+  >
+    <div [style.text-align]="isNewSubsection ? 'center' : ''">
       <h3>
-        {{ number }} Subsection: {{ subsection.description }}
+        {{ number }} {{ subsection.description }}
       </h3>
-      <p id="bodyHideClicker" (click)="hideBody = !hideBody">
+      <p id="bodyHideClicker" (click)="hideBody = !hideBody" *ngIf="!isNewSubsection">
         [{{hideBody ? 'show' : 'hide'}}]
       </p>
     </div>

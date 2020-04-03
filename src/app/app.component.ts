@@ -24,10 +24,10 @@ export class AppComponent {
 
 const doc = {
   sections: [{
-    description: 'section 1',
+    description: 'Section 1',
     subsections: [
       {
-        description: 'subsection 1',
+        description: 'Subsection 1',
         definitions: [
           { description: 'heyaa there', latex: '\LaTeX' },
           { description: 'heyab there', latex: '\LaTeX' },
