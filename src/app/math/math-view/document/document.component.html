@@ -1,12 +1,16 @@
 <div id="document">
 
-  <h1 id="description">Document</h1>
+  <h1 id="description">Document
+    <mat-icon (click)="this.lockEdit = !this.lockEdit">{{this.lockEdit ? 'lock' : 'lock_open'}}</mat-icon>
+  </h1>
 
   <app-section *ngFor="let section of document.sections"
                [section]="section"
                [number]="document.sections.indexOf(section) + 1"
+               [lockEdit]="lockEdit"
   ></app-section>
   <app-section
+    *ngIf="!lockEdit"
     [section]="newSectionBanner"
     [isNewSection]="true"
     (descriptionClick)="createNewSection()"

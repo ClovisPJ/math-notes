@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { MatIconModule } from '@angular/material/icon';
 import { KatexModule } from 'ng-katex';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -31,7 +31,8 @@ import { DocumentComponent } from './math/math-view/document/document.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    KatexModule
+    KatexModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

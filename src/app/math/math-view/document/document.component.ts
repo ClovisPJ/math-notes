@@ -9,9 +9,13 @@ import {Document, Section} from '../../math-model/document';
 export class DocumentComponent {
 
   @Input() document: Document;
+
   newSectionBanner: Section = new Section('+', []);
+  lockEdit: boolean;
+
 
   constructor() {
+    this.lockEdit = false;
   }
 
   createNewSection() {

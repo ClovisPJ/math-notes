@@ -11,6 +11,7 @@ export class SubsectionComponent {
   @Input() number: number;
   @Input() subsection: Subsection;
   @Input() isNewSubsection: boolean;
+  @Input() lockEdit: boolean;
 
   // tslint:disable-next-line:variable-name
   @Output('descriptionClick') _descriptionClick = new EventEmitter<boolean>();

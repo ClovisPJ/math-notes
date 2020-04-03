@@ -11,6 +11,7 @@ export class SectionComponent {
   @Input() number: number;
   @Input() section: Section;
   @Input() isNewSection: boolean;
+  @Input() lockEdit: boolean;
 
   // tslint:disable-next-line:variable-name
   @Output('descriptionClick') _descriptionClick = new EventEmitter<boolean>();

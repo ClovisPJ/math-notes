@@ -13,9 +13,10 @@
   <app-subsection *ngFor="let subsection of section.subsections"
                   [subsection]="subsection"
                   [number]="section.subsections.indexOf(subsection) + 1"
+                  [lockEdit]="lockEdit"
   ></app-subsection>
   <app-subsection
-    *ngIf="!isNewSection"
+    *ngIf="!isNewSection && !lockEdit"
     [subsection]="newSubsectionBanner"
     [isNewSubsection]="true"
     (descriptionClick)="createNewSubsection()"
