@@ -2,5 +2,5 @@
   <span>{{ number }}</span> Proof <span>{{ proof.description }}</span>
 </h3>
 
-<div id="math"></div>
+<div id="math" (focusout)="ngOnChanges()"></div>
 <!--ng-katex [equation]="proof.latex"></ng-katex-->
