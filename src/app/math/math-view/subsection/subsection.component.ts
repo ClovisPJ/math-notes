@@ -22,11 +22,14 @@ export class SubsectionComponent {
   private _hideDefinitions: boolean;
   // tslint:disable-next-line:variable-name
   private _hidePropositions: boolean;
+  // tslint:disable-next-line:variable-name
+  private _hover: boolean;
 
   constructor() {
     this._hideBody = false;
     this._hideDefinitions = false;
     this._hidePropositions = false;
+    this._hover = false;
   }
 
   get hideBody(): boolean {
@@ -54,7 +57,25 @@ export class SubsectionComponent {
   }
 
   descriptionClick() {
-    this._descriptionClick.emit(true);
+    if (this.isNewSubsection) {
+      this._descriptionClick.emit(true);
+    }
+  }
+
+  get hover(): boolean {
+    return this._hover;
+  }
+
+  set hover(value: boolean) {
+    this._hover = value;
+  }
+
+  get color() {
+    if (this.hover && this.isNewSubsection) {
+      return '#eff4f9';
+    } else {
+      return '#f5faff';
+    }
   }
 
 }

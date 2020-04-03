@@ -37,6 +37,7 @@ export class SectionComponent {
     }
     this._click = value;
   }
+
   get hover(): boolean {
     return this._hover;
   }
