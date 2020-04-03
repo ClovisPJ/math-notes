@@ -2,7 +2,10 @@
 
   <h1 id="description">Document</h1>
 
-  <app-section *ngFor="let section of document.sections" [section]="section"></app-section>
+  <app-section *ngFor="let section of document.sections"
+               [section]="section"
+               [number]="document.sections.indexOf(section) + 1"
+  ></app-section>
   <app-section
     [section]="newSectionBanner"
     [isNewSection]="true"

@@ -10,7 +10,10 @@
 </h2>
 
 <div id="body" *ngIf="!click">
-  <app-subsection *ngFor="let subsection of section.subsections" [subsection]="subsection"></app-subsection>
+  <app-subsection *ngFor="let subsection of section.subsections"
+                  [subsection]="subsection"
+                  [number]="section.subsections.indexOf(subsection) + 1"
+  ></app-subsection>
   <app-subsection
     *ngIf="!isNewSection"
     [subsection]="newSubsectionBanner"

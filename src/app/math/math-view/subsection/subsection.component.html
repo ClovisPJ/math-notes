@@ -34,10 +34,16 @@
 
   <div id="body" *ngIf="!hideBody">
     <ng-container *ngIf="!hideDefinitions">
-      <app-defintion *ngFor="let definition of subsection.definitions" [definition]="definition"></app-defintion>
+      <app-defintion *ngFor="let definition of subsection.definitions"
+        [definition]="definition"
+        [number]="subsection.definitions.indexOf(definition) + 1"
+      ></app-defintion>
     </ng-container>
     <ng-container *ngIf="!hidePropositions">
-      <app-proposition *ngFor="let proposition of subsection.propositions" [proposition]="proposition"></app-proposition>
+      <app-proposition *ngFor="let proposition of subsection.propositions"
+                       [proposition]="proposition"
+                       [number]="subsection.propositions.indexOf(proposition) + 1"
+      ></app-proposition>
     </ng-container>
   </div>
 
