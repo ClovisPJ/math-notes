@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "math-notes"
+    }
+  },
+  "defaultProject": "math-notes",
+  "cli": {
+    "analytics": "4a1e9b86-48c6-4a36-90f0-e0fcd1c77547"
+  }
 }
