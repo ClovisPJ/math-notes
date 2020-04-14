@@ -39,4 +39,8 @@ export class ProofComponent implements OnInit, OnChanges {
     this.field.latex(this.proof.latex);
   }
 
+  setProofDescription(description: string): void {
+    this.proof.description = description;
+  }
+
 }

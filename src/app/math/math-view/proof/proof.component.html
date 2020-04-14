@@ -1,5 +1,14 @@
 <h3>
-  <span>{{ number }}</span> Proof <span>{{ proof.description }}</span>
+  {{ number }}
+  Proof
+  <label>
+    <input
+      #description
+      [value]="proof.description"
+      (keyup)="setProofDescription(description.value)"
+      [disabled]="lockEdit"
+    >
+  </label>
 </h3>
 
 <div id="math" (focusout)="ngOnChanges()"></div>
